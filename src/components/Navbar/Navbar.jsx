@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";  // Only import Link
 import styles from "./Navbar.module.css";
 import { getImageUrl } from "../../utils";
 
@@ -8,9 +8,9 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <a className={styles.title} href="/">
+      <Link className={styles.title} to="/">
         Portfolio
-      </a>
+      </Link>
       <div className={styles.menu}>
         <img
           className={styles.menuBtn}
@@ -37,6 +37,9 @@ export const Navbar = () => {
           </li>
           <li>
             <a href="#contact">Contact</a>
+          </li>
+          <li>
+            <Link to="/extra">Extra</Link>
           </li>
         </ul>
       </div>
