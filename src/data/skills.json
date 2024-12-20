@@ -13,15 +13,15 @@
   },
   {
     "title": "Java",
-    "imageSrc": "skills/node.png"
+    "imageSrc": "skills/java.png"
   },
   {
-    "title": "GraphQL",
-    "imageSrc": "skills/graphql.png"
+    "title": "Unity",
+    "imageSrc": "skills/Unity.png"
   },
   {
-    "title": "MongoDB",
-    "imageSrc": "skills/mongodb.png"
+    "title": "PostGresSQL",
+    "imageSrc": "skills/PostgreSQL.png"
   },
   {
     "title": "Figma",
