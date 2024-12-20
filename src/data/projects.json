@@ -11,7 +11,7 @@
     "title": "DreamDefendersProject",
     "imageSrc": "projects/Game.png",
     "description": "This project involves creating a game in collaboration with three other partners. We are using Unity as our development platform to build a tower defense-style game.",
-    "skills": ["Unity", "C#", "Github", ""],
+    "skills": ["Unity", "C#", "Github", "Game Development"],
     "demo": "https://www.youtube.com/watch?v=zvZ7mNRYD_U",
     "source": "https://github.com/Eli293/DreamDefendersProject/tree/New-Branch"
   },
