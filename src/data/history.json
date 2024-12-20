@@ -4,26 +4,26 @@
     "organisation": "Systeme Sante ACL Inc.",
     "startDate": "Feb, 2024",
     "endDate": "Present",
-    "experiences": ["Worked on making a a corporate website for the company"],
-    "imageSrc": "history/google.png"
+    "experiences": ["Worked on making a a corporate website for the company ACL systeme, based on RAMQ billing."],
+    "imageSrc": "history/ACL.png"
   },
   {
-    "role": "UI Designer",
-    "organisation": "Mirosoft",
-    "startDate": "Aug, 2021",
-    "endDate": "Aug, 2022",
-    "experiences": ["Worked on Windows 11", "Designed the control panel"],
-    "imageSrc": "history/microsoft.png"
-  },
+    "role": "Deli Cook",
+    "organisation": "Costco Wholesale",
+    "startDate": "May, 2023",
+    "endDate": "Aug, 2024",
+    "experiences": ["We've worked in an environment where we collaborated as a team to tackle the tasks given to us. Every day, we needed to complete the required tasks. Once done, we'd ensure the area was clean and prepared for the tasks the following day."],
+    "imageSrc": "history/costco.png"
+  }
+  ,
   {
     "role": "SWE Intern",
-    "organisation": "Netflix",
-    "startDate": "Apr, 2020",
-    "endDate": "Jun, 2020",
+    "organisation": "Le Buffet des Continents",
+    "startDate": "Jun, 2022",
+    "endDate": "Aug, 2022",
     "experiences": [
-      "Worked on component library",
-      "Helped create UI components"
+      "During the summer of 2022, I worked in a fast-paced restaurant where I had to replace trays emptied by customers with fresh ones prepared by the cooks."
     ],
-    "imageSrc": "history/netflix.png"
+    "imageSrc": "history/saveur.png"
   }
 ]
