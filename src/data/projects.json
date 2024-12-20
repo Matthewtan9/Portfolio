@@ -1,26 +1,26 @@
 [
   {
-    "title": "Project A",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
+    "title": "Champlain pet clinic",
+    "imageSrc": "projects/champlain.png",
+    "description": "This is a project with a collaboration with 5 other partners.",
+    "skills": ["Java", "AngularJS", "Microservices", "Teamwork"],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "https://github.com/cgerard321/champlain_petclinic"
   },
   {
-    "title": "Project B",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node", "Sass"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "title": "DreamDefendersProject",
+    "imageSrc": "projects/Game.png",
+    "description": "This is a project that involves making a game with the collaboration of 3 other partners",
+    "skills": ["Unity", "C#", "Github", ""],
+    "demo": "https://www.youtube.com/watch?v=zvZ7mNRYD_U",
+    "source": "https://github.com/Eli293/DreamDefendersProject/tree/New-Branch"
   },
   {
-    "title": "Project C",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "title": "Coupe Ton Arbre",
+    "imageSrc": "projects/CTP.png",
+    "description": "This is a project withink a team of 4 using the knowledge for construction a funtionning web for a company.",
+    "skills": ["JavaScript", "Java", "Css"],
+    "demo": "https://www.coupetonarbre.live/",
+    "source": "https://github.com/ebond07/CoupeTonArbre"
   }
 ]
