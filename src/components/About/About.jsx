@@ -36,11 +36,11 @@ export const About = () => {
           </li>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/cursorIcon.png")} alt="UI icon" />
+            <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
             <div className={styles.aboutItemText}>
-              <h3>UI Designer</h3>
+              <h3>Full Stack</h3>
               <p>
-                I have designed multiple landing pages and have created design
-                systems as well
+                I have experiences in making full stack web application.
               </p>
             </div>
           </li>

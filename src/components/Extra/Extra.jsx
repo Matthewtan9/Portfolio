@@ -5,12 +5,7 @@ import { ArrowLeft, Youtube, Gamepad, Book, Music, Camera, Coffee } from 'lucide
 
 export const Extra = () => {
   const hobbies = [
-    {
-      title: 'Gaming',
-      icon: <Gamepad className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
-      description: 'Favorite games and gaming experiences',
-      link: 'https://your-gaming-profile.com',
-    },
+   
     {
       title: 'YouTube Channel',
       icon: <Youtube className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
@@ -18,10 +13,22 @@ export const Extra = () => {
       link: 'https://www.youtube.com/@4matt44',
     },
     {
+      title: 'Tiktok Channel',
+      icon: <Youtube className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
+      description: 'Hey this is my gaming youtube channel, feel free to visit and share your thoughts!',
+      link: 'https://www.tiktok.com/@gaminggolem',
+    },
+    {
       title: 'Reading',
       icon: <Book className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
       description: 'Book recommendations and reviews',
-      link: '/Book',
+      link: '/extra/books',
+    }, 
+    {
+      title: 'Gaming',
+      icon: <Gamepad className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
+      description: 'Favorite games and gaming experiences',
+      link: '/extra/gaming',
     },
     {
       title: 'Music',
@@ -29,33 +36,38 @@ export const Extra = () => {
       description: 'Favorite artists and playlists',
       link: 'https://spotify.com/your-profile',
     },
-    {
-      title: 'Coffee',
-      icon: <Coffee className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
-      description: 'Favorite coffee spots and brewing techniques',
-      link: 'https://your-coffee-blog.com',
-    },
+    // {
+    //   title: 'Coffee',
+    //   icon: <Coffee className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
+    //   description: 'Favorite coffee spots and brewing techniques',
+    //   link: 'https://your-coffee-blog.com',
+    // },
   ];
 
   return (
     <div className={styles.container}>
       {/* Header */}
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center">
             <a href="/" className={styles.backLink}>
               <ArrowLeft className="w-5 h-5 mr-2" />
               Back to Portfolio
             </a>
+            
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className={`text-4xl font-bold mb-4 ${styles.title}`}>
+        <a href="/" className={styles.backLink}>
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Back to Portfolio
+            </a>
+          <h1 className={`text-4xl font-bold mb-4 ${styles.title1}`}>
             Extra Interests & Hobbies
           </h1>
           <p className={`text-xl max-w-2xl mx-auto ${styles.description}`}>
@@ -84,39 +96,16 @@ export const Extra = () => {
               >
                 View More
               </a>
+              
             </div>
           ))}
-        </div>
 
-        {/* Featured Content Section */}
-        <div className="mt-20">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${styles.title}`}>
-            Featured Content
-          </h2>
-          <div className={`${styles.card} rounded-lg shadow-md p-8`}>
-            <div className="mb-8">
-              <img
-                src="/api/placeholder/1200/675"
-                alt="Featured content"
-                className="rounded-lg object-cover w-full h-64"
-              />
-            </div>
-            <h3 className={`text-2xl font-semibold mb-4 ${styles.title}`}>
-              Latest Project
-            </h3>
-            <p className={`mb-6 ${styles.description}`}>
-              Description of your most recent or favorite hobby-related project,
-              video, or creation. Share what makes this particular piece special.
-            </p>
-            <a
-              href="#"
-              className={`${styles.button} inline-block px-8 py-3 rounded-full`}
-            >
-              Check it out
-            </a>
-          </div>
+     
+          
+            
         </div>
       </main>
+      <footer/>
     </div>
   );
 };
