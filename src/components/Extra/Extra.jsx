@@ -1,111 +1,134 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import { ArrowLeft, Youtube, Gamepad, Book, Music } from 'lucide-react';
 import styles from './Extra.module.css';
-// import {Book} from './Book'
-import { ArrowLeft, Youtube, Gamepad, Book, Music, Camera, Coffee } from 'lucide-react';
 
 export const Extra = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const hobbyRefs = useRef({});
+
   const hobbies = [
-   
     {
       title: 'YouTube Channel',
-      icon: <Youtube className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
+      icon: <Youtube size={24} />,
       description: 'Hey this is my gaming youtube channel, feel free to visit and share your thoughts!',
       link: 'https://www.youtube.com/@4matt44',
     },
     {
       title: 'Tiktok Channel',
-      icon: <Youtube className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
+      icon: <Youtube size={24} />,
       description: 'Hey this is my gaming youtube channel, feel free to visit and share your thoughts!',
       link: 'https://www.tiktok.com/@gaminggolem',
     },
     {
       title: 'Reading',
-      icon: <Book className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
-      description: 'Book recommendations and reviews',
+      icon: <Book size={24} />,
+      description: 'Book that i have read with recommendation and review',
       link: '/extra/books',
-    }, 
+    },
     {
       title: 'Gaming',
-      icon: <Gamepad className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
+      icon: <Gamepad size={24} />,
       description: 'Favorite games and gaming experiences',
       link: '/extra/gaming',
     },
     {
       title: 'Music',
-      icon: <Music className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
+      icon: <Music size={24} />,
       description: 'Favorite artists and playlists',
       link: 'https://spotify.com/your-profile',
     },
-    // {
-    //   title: 'Coffee',
-    //   icon: <Coffee className="w-12 h-12 mb-4" style={{ color: 'var(--color-primary)' }} />,
-    //   description: 'Favorite coffee spots and brewing techniques',
-    //   link: 'https://your-coffee-blog.com',
-    // },
+    {
+      title: 'Youtube videos',
+      icon: <Youtube size={24} />,
+      description: 'Favorite artists and playlists',
+      link: 'https://spotify.com/your-profile',
+    },
+    {
+      title: 'Side projects',
+      icon: <Book size={24} />,
+      description: 'Favorite artists and playlists',
+      link: 'https://spotify.com/your-profile',
+    },
+    
   ];
+
+  const filteredHobbies = hobbies.filter(hobby =>
+    hobby.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const scrollToHobby = (title) => {
+    hobbyRefs.current[title]?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+    setIsDropdownOpen(false);
+    setSearchTerm('');
+  };
 
   return (
     <div className={styles.container}>
-      {/* Header */}
-      {/* <header className={styles.header}>
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center">
-            <a href="/" className={styles.backLink}>
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Portfolio
-            </a>
-            
-          </div>
-        </div>
-      </header> */}
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-        <a href="/" className={styles.backLink}>
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Portfolio
-            </a>
-          <h1 className={`text-4xl font-bold mb-4 ${styles.title1}`}>
-            Extra Interests & Hobbies
-          </h1>
-          <p className={`text-xl max-w-2xl mx-auto ${styles.description}`}>
+      <div className={styles.content}>
+        <header className={styles.header}>
+          <a href="/" className={styles.backLink}>
+            <ArrowLeft className={styles.backIcon} />
+            Back to Portfolio
+          </a>
+          <h1 className={styles.title}>Extra Interests & Hobbies</h1>
+          <p className={styles.subtitle}>
             Beyond coding, here are some things I'm passionate about. Feel free to
             connect with me on these platforms!
           </p>
-        </div>
+          
+          <div className={styles.searchWrapper}>
+            <input
+              type="text"
+              placeholder="Search hobbies..."
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setIsDropdownOpen(true);
+              }}
+              className={styles.searchInput}
+            />
+            {isDropdownOpen && searchTerm && (
+              <div className={styles.dropdownMenu}>
+                {filteredHobbies.map((hobby) => (
+                  <button
+                    key={hobby.title}
+                    onClick={() => scrollToHobby(hobby.title)}
+                    className={styles.dropdownItem}
+                  >
+                    {hobby.title}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </header>
 
-        {/* Hobbies Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {hobbies.map((hobby, index) => (
+        <div className={styles.hobbiesGrid}>
+          {hobbies.map((hobby) => (
             <div
-              key={index}
-              className={`${styles.card} rounded-lg shadow-md p-8 text-center`}
+              key={hobby.title}
+              ref={(el) => (hobbyRefs.current[hobby.title] = el)}
+              className={styles.hobbyCard}
             >
-              <div className="flex justify-center">{hobby.icon}</div>
-              <h2 className={`text-2xl font-semibold mb-2 ${styles.title}`}>
-                {hobby.title}
-              </h2>
-              <p className={`mb-6 ${styles.description}`}>{hobby.description}</p>
+              <div className={styles.iconWrapper}>{hobby.icon}</div>
+              <h2 className={styles.hobbyTitle}>{hobby.title}</h2>
+              <p className={styles.hobbyDescription}>{hobby.description}</p>
               <a
                 href={hobby.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${styles.button} inline-block px-6 py-2 rounded-full`}
+                className={styles.viewMoreButton}
               >
                 View More
               </a>
-              
             </div>
           ))}
-
-     
-          
-            
         </div>
-      </main>
-      <footer/>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ export const Book = () => {
     {
       title: 'The Bond: Connecting Through the Space Between Us',
       author: 'Lynne McTaggart',
-      genre: 'Science fiction, Philosophy', // Fixed genre string
+      genre: ['Science fiction', 'Philosophy'],
       description: 'What matters is not the isolated entity, but the space between things, the relationship of things. The Bond.',
       link: 'https://www.amazon.ca/Bond-Connecting-Through-Space-Between/dp/1439157944',
       cover: '/assets/extra/book/TheBond.jpg',
@@ -16,60 +16,59 @@ export const Book = () => {
 
   return (
     <div className={styles.container}>
-      {/* Header */}
-      <header className={styles.header}>
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center">
-            <a href="/extra" className={styles.backLink}>
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Main Portfolio
-            </a>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-12">
-        <div className="text-center mb-16">
-          <h1 className={`text-4xl font-bold mb-4 ${styles.title1}`}>
+      <div className={styles.content}>
+        <header className={styles.header}>
+          <a href="/extra" className={styles.backLink}>
+            <ArrowLeft className={styles.backIcon} />
+            Back to Extra
+          </a>
+          <h1 className={styles.title1}>
             Book Recommendations
           </h1>
-          <p className={`text-xl max-w-2xl mx-auto ${styles.description}`}>
+          <p className={styles.description}>
             Here are some of my favorite books. Feel free to check them out!
           </p>
-        </div>
+        </header>
 
-        {/* Book Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className={styles.bookGrid}>
           {books.map((book, index) => (
             <div
               key={index}
-              className={`${styles.card} rounded-lg shadow-md p-6 text-center`}
+              className={styles.card}
             >
-              <img
-                src={book.cover}
-                alt={book.title}
-                className="w-full h-64 object-cover rounded-lg mb-4"
-              />
-              <h2 className={`text-2xl font-semibold mb-2 ${styles.title}`}>
-                {book.title}
-              </h2>
-              <h3 className={`text-lg font-medium mb-2 ${styles.author}`}>
-                by {book.author}
-              </h3>
-              <p className={`mb-6 ${styles.description}`}>{book.description}</p>
-              <a
-                href={book.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${styles.button} inline-block px-6 py-2 rounded-full`}
-              >
-                Learn More
-              </a>
+              <div className={styles.imageWrapper}>
+                <img
+                  src={book.cover}
+                  alt={book.title}
+                  className={styles.coverImage}
+                />
+              </div>
+              <div className={styles.cardContent}>
+                <h2 className={styles.title}>
+                  {book.title}
+                </h2>
+                <h3 className={styles.author}>
+                  by {book.author}
+                </h3>
+                <div className={styles.genres}>
+                  {book.genre.map((g, i) => (
+                    <span key={i} className={styles.genre}>{g}</span>
+                  ))}
+                </div>
+                <p className={styles.description}>{book.description}</p>
+                <a
+                  href={book.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.button}
+                >
+                  Learn More
+                </a>
+              </div>
             </div>
           ))}
         </div>
-      </main>
+      </div>
     </div>
   );
 };

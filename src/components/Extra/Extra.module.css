@@ -1,168 +1,192 @@
-/* Root container */
 .container {
-  --section-padding: clamp(1.5rem, 5vw, 3rem);
-  --content-width: min(100% - 2rem, 1200px);
-  
-  background-color: var(--color-bg);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: #0a192f;
+  color: #e2e8f0;
+  padding: 2rem 1rem;
 }
 
-/* Header styles */
-.header {
-  background-color: var(--color-dark);
-  padding: var(--section-padding);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.header > div {
-  width: var(--content-width);
+.content {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Back link styles */
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
 .backLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--color-primary);
-  font-weight: 500;
-  padding: 0.9rem;
-  margin: -0.5rem;
-  border-radius: 0.375rem;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
 }
 
 .backLink:hover {
-  color: var(--color-text);
-  background-color: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
 }
 
-.backLink svg {
+.backIcon {
   width: 1.25rem;
   height: 1.25rem;
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 0.5rem;
 }
 
-.backLink:hover svg {
-  transform: translateX(-4px);
-}
-
-/* Card styles */
-.card {
-  background-color: var(--color-dark);
-  border-radius: 1rem;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -2px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  background-color: var(--color-secondary);
-  box-shadow: 
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1);
-}
-
-/* Typography */
 .title {
-  color: var(--color-text);
-  margin-bottom: 1.25rem;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1.2;
-  
+  color: #e2e8f0;
+  margin-bottom: 1rem;
 }
-.title1 {
-  text-align: center;
-  background: linear-gradient(to right, var(--color-primary), var(--color-text));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  max-width: 15ch;
-  margin: 0 auto;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-.description {
-  color: var(--color-text);
-  opacity: 0.9;
-  margin-bottom: 2rem;
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
+
+.subtitle {
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 2rem;
   line-height: 1.6;
-  max-width: 65ch;
-  margin-inline: auto;
 }
 
-/* Button styles */
-.button {
-  background-color: var(--color-primary);
-  color: var(--color-text);
-  padding: 0.75rem 2rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid transparent;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+.searchWrapper {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.button:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.25);
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  color: #e2e8f0;
+  font-size: 1rem;
+  transition: all 0.2s ease;
 }
 
-.button:active {
-  transform: translateY(0);
+.searchInput:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
 }
 
-/* Featured section styles */
-.featuredSection {
-  background-color: var(--color-dark);
+.searchInput::placeholder {
+  color: #64748b;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.dropdownItem {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #334155;
+}
+
+.hobbiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.hobbyCard {
+  background-color: #1e293b;
   border-radius: 1rem;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin: var(--section-padding) auto;
-  width: var(--content-width);
+  padding: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.featuredSection:hover {
-  background-color: var(--color-secondary);
-  border-color: rgba(255, 255, 255, 0.2);
+.hobbyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Focus styles for accessibility */
-.button:focus-visible,
-.backLink:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+.iconWrapper {
+  background-color: #334155;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-/* Reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .card,
-  .button,
-  .backLink,
-  .featuredSection {
-    transition: none;
+.iconWrapper svg {
+  color: #60a5fa;
+}
+
+.hobbyTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+.hobbyDescription {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.viewMoreButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.viewMoreButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
   }
-  
-  .card:hover,
-  .featuredSection:hover {
-    transform: none;
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .hobbiesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobbyCard {
+    padding: 1.5rem;
   }
 }
