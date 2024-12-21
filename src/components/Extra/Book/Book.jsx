@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Book.module.css';
 import { ArrowLeft } from 'lucide-react';
-
+import bookCover from '/assets/extra/book/TheBond.jpg';
 export const Book = () => {
   const books = [
     {
@@ -10,7 +10,7 @@ export const Book = () => {
       genre: ['Science fiction', 'Philosophy'],
       description: 'What matters is not the isolated entity, but the space between things, the relationship of things. The Bond.',
       link: 'https://www.amazon.ca/Bond-Connecting-Through-Space-Between/dp/1439157944',
-      cover: 'assets/extra/book/TheBond.jpg',
+      cover: bookCover,
     },
   ];
 
