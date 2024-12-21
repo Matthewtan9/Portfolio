@@ -1,64 +1,189 @@
-@import "../../vars.css";
-
 .container {
+  --padding-inline: clamp(0.5rem, 2vw, 1.5rem);
+  --container-max-width: 1000px;
+  
   color: var(--color-text);
-  margin-top: 120px;
+  margin-block-start: min(60px, 8vh);
   background-color: var(--color-secondary);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100vw;
-  padding: 58px 10%;
-  gap: 10px;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding: clamp(1rem, 2vh, 2rem) var(--padding-inline);
+  gap: clamp(0.75rem, 1.5vh, 1rem);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+  text-align: center;
+  max-width: 45ch;
 }
 
 .text h2 {
-  font-size: 80px;
+  font-size: clamp(1.5rem, 2vw + 0.75rem, 2.5rem);
   font-weight: 700;
-  letter-spacing: 4px;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin-block-end: 0.3em;
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .text p {
-  font-size: 40px;
+  font-size: clamp(0.875rem, 1vw + 0.3rem, 1.25rem);
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  color: var(--color-text);
+  opacity: 0.9;
+}
+
+.form {
+  width: min(100%, 400px);
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  background-color: var(--color-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.formGroup {
+  margin-block-end: 0.75rem;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-block-end: 0.25rem;
+  opacity: 0.9;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color-text);
+  transition: all 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 5rem;
+  line-height: 1.4;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submitBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.status {
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  background-color: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
 }
 
 .links {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   list-style: none;
-  gap: 26px;
+  gap: 1.5rem;
+  margin-block-start: 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .link {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.link:hover {
+  transform: translateY(-1px);
 }
 
 .link a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 30px;
+  font-size: 0.875rem;
   font-weight: 400;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  opacity: 0.9;
 }
 
-@media screen and (max-width: 830px) {
-  .container {
-    flex-direction: column;
-    gap: 23px;
-  }
+.link a:hover {
+  color: #60a5fa;
+  opacity: 1;
+}
 
-  .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.link img {
+  width: 1.25rem;
+  height: 1.25rem;
+  filter: brightness(0.9);
+  transition: filter 0.2s ease;
+}
 
+.link:hover img {
+  filter: brightness(1);
+}
+
+@media (max-width: 640px) {
   .links {
-    align-items: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .form {
+    width: min(100%, 350px);
   }
 }

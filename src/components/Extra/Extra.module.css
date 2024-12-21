@@ -1,76 +1,192 @@
 .container {
-    background-color: var(--color-bg);
-    min-height: 100vh;
+  min-height: 100vh;
+  background-color: #0a192f;
+  color: #e2e8f0;
+  padding: 2rem 1rem;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+}
+
+.backLink:hover {
+  color: #94a3b8;
+}
+
+.backIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.searchWrapper {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  color: #e2e8f0;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+}
+
+.searchInput::placeholder {
+  color: #64748b;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.dropdownItem {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #334155;
+}
+
+.hobbiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.hobbyCard {
+  background-color: #1e293b;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hobbyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.iconWrapper {
+  background-color: #334155;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.iconWrapper svg {
+  color: #60a5fa;
+}
+
+.hobbyTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+.hobbyDescription {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.viewMoreButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.viewMoreButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
   }
-  
-  .header {
-    background-color: var(--color-dark);
-    padding: 1rem 0;
-  }
-  
-  .backLink {
-    display: flex;
-    align-items: center;
-    color: var(--color-primary);
-    transition: color 0.3s ease;
-  }
-  
-  .backLink:hover {
-    color: var(--color-text);
-  }
-  
-  .backLink svg {
-    transition: transform 0.3s ease;
-  }
-  
-  .backLink:hover svg {
-    transform: translateX(-4px);
-  }
-  
-  .card {
-    background-color: var(--color-dark);
-    border-radius: 0.5rem;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    background-color: var(--color-secondary);
-  }
-  
+
   .title {
-    color: var(--color-text);
-    margin-bottom: 1rem;
-   
+    font-size: 2rem;
   }
-  
-  .description {
-    color: var(--color-text);
-    opacity: 0.8;
-    margin-bottom: 1.5rem;
+
+  .hobbiesGrid {
+    grid-template-columns: 1fr;
   }
-  
-  .button {
-    background-color: var(--color-primary);
-    color: var(--color-text);
-    padding: 0.5rem 1.5rem;
-    border-radius: 9999px;
-    transition: opacity 0.3s ease;
+
+  .hobbyCard {
+    padding: 1.5rem;
   }
-  
-  .button:hover {
-    opacity: 0.9;
-  }
-  
-  .featuredSection {
-    background-color: var(--color-dark);
-    border-radius: 0.5rem;
-    padding: 2rem;
-    transition: all 0.3s ease;
-  }
-  
-  .featuredSection:hover {
-    background-color: var(--color-secondary);
-  }
+}
