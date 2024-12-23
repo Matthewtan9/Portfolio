@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ArrowLeft, Youtube, Gamepad, Book, Music } from 'lucide-react';
+import { ArrowLeft, Youtube, Gamepad, Book, Music,Clapperboard } from 'lucide-react';
 import styles from './Extra.module.css';
 
 export const Extra = () => {
@@ -9,17 +9,13 @@ export const Extra = () => {
 
   const hobbies = [
     {
-      title: 'YouTube Channel',
+      title: 'My Own Entertainement Channels',
       icon: <Youtube size={24} />,
-      description: 'Hey this is my gaming youtube channel, feel free to visit and share your thoughts!',
-      link: 'https://www.youtube.com/@4matt44',
+      description: 'If you are interested in my own Youtube, tiktok, instagrams etc..., channels',
+      link: '/extra/Channel',
     },
-    {
-      title: 'Tiktok Channel',
-      icon: <Youtube size={24} />,
-      description: 'Hey this is my gaming youtube channel, feel free to visit and share your thoughts!',
-      link: 'https://www.tiktok.com/@gaminggolem',
-    },
+
+  
     {
       title: 'Reading',
       icon: <Book size={24} />,
@@ -33,6 +29,12 @@ export const Extra = () => {
       link: '/extra/gaming',
     },
     {
+      title: 'Movies',
+      icon: <Clapperboard size={24} />,
+      description: 'Favorite movies and recommendation',
+      link: '/extra/movie',
+    },
+    {
       title: 'Music',
       icon: <Music size={24} />,
       description: 'Favorite artists and playlists',
@@ -41,7 +43,13 @@ export const Extra = () => {
     {
       title: 'Youtube videos',
       icon: <Youtube size={24} />,
-      description: 'Favorite artists and playlists',
+      description: 'Youtube videos or channel I like to watch',
+      link: 'https://spotify.com/your-profile',
+    },
+    {
+      title: 'Classes',
+      icon: <Book size={24} />,
+      description: 'Classes I have attended too',
       link: 'https://spotify.com/your-profile',
     },
     {

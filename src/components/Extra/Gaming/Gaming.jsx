@@ -8,9 +8,10 @@ export const Gaming = () => {
       title: 'League of Legends',
       developer: 'Riot Games',
       genre: ['MOBA', 'Strategy'],
-      description: 'My favorite MOBA game where I mainly play support role. Been playing since Season 3 and still enjoying every match!',
+      description: 'My favorite MOBA game where I mainly play Botlane role as known as ADC. Been playing since Season 10 and still enjoying every match!',
       link: 'https://www.leagueoflegends.com',
-      cover: '/assets/extra/gaming/lol.jpg',
+      cover: '/assets/extra/gaming/lol.jpg',      
+      skill:['teamwork, patience, self-learning'],
     },
     {
       title: 'Valorant',
@@ -19,6 +20,7 @@ export const Gaming = () => {
       description: 'A tactical shooter that combines precise gunplay with unique agent abilities. I enjoy playing as a controller or sentinel.',
       link: 'https://playvalorant.com',
       cover: '/assets/extra/gaming/valorant.jpg',
+      skill:['yes'],
     },
     {
       title: 'Minecraft',
@@ -27,6 +29,7 @@ export const Gaming = () => {
       description: 'A creative playground where I love building complex redstone mechanisms and exploring new worlds.',
       link: 'https://www.minecraft.net',
       cover: '/assets/extra/gaming/minecraft.jpg',
+      skill:['yes'],
     }
   ];
 
@@ -69,6 +72,11 @@ export const Gaming = () => {
                 <div className={styles.genres}>
                   {game.genre.map((g, i) => (
                     <span key={i} className={styles.genre}>{g}</span>
+                  ))}
+                </div>
+                <div className={styles.skills}>
+                  {game.skill.map((g, i) => (
+                    <span key={i} className={styles.skill}>{g}</span>
                   ))}
                 </div>
                 <p className={styles.description}>{game.description}</p>

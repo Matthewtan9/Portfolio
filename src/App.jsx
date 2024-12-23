@@ -10,11 +10,12 @@ import { Projects } from "./components/Projects/Projects";
 import { Book } from "./components/Extra/Book/Book";
 import { Extra } from "./components/Extra/Extra";
 import { Gaming } from "./components/Extra/Gaming/Gaming";
+import { Channel } from "./components/Extra/Channel/Channel";
 
 // Create a wrapper component to handle the navbar logic
 const AppContent = () => {
   const location = useLocation();
-  const showNavbar = !location.pathname.includes('/extra');
+  const showNavbar = !location.pathname.startsWith('/extra');
 
   return (
     <div className={styles.App}>
@@ -36,6 +37,7 @@ const AppContent = () => {
         <Route path="/extra" element={<Extra />} />
         <Route path="/extra/books" element={<Book />} />
         <Route path="/extra/gaming" element={<Gaming />} />
+        <Route path="/extra/channel" element={< Channel />} />
       </Routes>
     </div>
   );
