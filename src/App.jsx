@@ -11,6 +11,9 @@ import { Book } from "./components/Extra/Book/Book";
 import { Extra } from "./components/Extra/Extra";
 import { Gaming } from "./components/Extra/Gaming/Gaming";
 import { Channel } from "./components/Extra/Channel/Channel";
+import { Class } from "./components/Extra/Class/Class";
+import { Movie } from "./components/Extra/Movie/Movie";
+
 
 // Create a wrapper component to handle the navbar logic
 const AppContent = () => {
@@ -38,6 +41,8 @@ const AppContent = () => {
         <Route path="/extra/books" element={<Book />} />
         <Route path="/extra/gaming" element={<Gaming />} />
         <Route path="/extra/channel" element={< Channel />} />
+        <Route path="/extra/class" element={< Class />} />
+        <Route path="/extra/Movie" element={< Movie />} />
       </Routes>
     </div>
   );
