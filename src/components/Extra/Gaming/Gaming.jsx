@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './Gaming.module.css';
 import { ArrowLeft } from 'lucide-react';
+import lol from '/assets/extra/gaming/lol.png';
+import elden from '/assets/extra/gaming/Elden.png';
+import minecraft from '/assets/extra/gaming/Minecraft.png';
 
 export const Gaming = () => {
   const games = [
@@ -10,7 +13,7 @@ export const Gaming = () => {
       genre: ['MOBA', 'Strategy'],
       description: 'My favorite MOBA game where I mainly play Botlane role as known as ADC. Been playing since Season 10 and still enjoying every match!',
       link: 'https://www.leagueoflegends.com',
-      cover: '/assets/extra/gaming/lol.png',      
+      cover: lol,      
       skill:['teamwork, patience, self-learning'],
     },
     {
@@ -19,7 +22,7 @@ export const Gaming = () => {
       genre: ['Action RPG', 'Dark Fantasy'],
       description: 'A challenging open-world action RPG set in the Lands Between. Exploring the vast world as a Tarnished while mastering different builds and combat styles.',
       link: 'https://www.bandainamcoent.com/games/elden-ring',
-      cover: '/assets/extra/gaming/Elden.png',   
+      cover: elden,   
       skill: ['patience'],
       },
     {
@@ -28,7 +31,7 @@ export const Gaming = () => {
       genre: ['Sandbox', 'Adventure'],
       description: 'A creative playground where I love building complex redstone mechanisms and exploring new worlds.',
       link: 'https://www.minecraft.net',
-      cover: '/assets/extra/gaming/Minecraft.png',
+      cover: minecraft,
       skill:['Creativity'],
     }
   ];
