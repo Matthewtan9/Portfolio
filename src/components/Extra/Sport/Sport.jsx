@@ -11,14 +11,14 @@ export const Sport = () => {
       league: 'NBA',
       team: 'Golden State Warriors',
       highlights: 'Fast-paced sport combining athleticism with strategic team play.',
-      cover: basket
+      cover: basket,
     },
     {
       title: 'Soccer',
       league: 'Premier League',
       team: 'Manchester United',
       highlights: 'The beautiful game known for its global appeal and technical skill.',
-      cover: soccer
+      cover: soccer,
     },
  
   ];
