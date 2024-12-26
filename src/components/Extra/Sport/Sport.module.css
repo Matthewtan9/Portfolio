@@ -124,20 +124,3 @@
     line-height: 1.4;
     font-size: 0.8rem;
   }
-  .courseLink {
-    display: inline-flex;
-    align-items: center;
-    color: #2563eb;
-    margin-top: 1rem;
-    transition: color 0.2s;
-  }
-  
-  .courseLink:hover {
-    color: #1d4ed8;
-  }
-  
-  .courseIcon {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.5rem;
-  }

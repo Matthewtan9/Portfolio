@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { ArrowLeft, Youtube, Gamepad, Book, Music,Clapperboard } from 'lucide-react';
+import { ArrowLeft, Youtube, Gamepad, Book, Music,Clapperboard,Volleyball } from 'lucide-react';
 import styles from './Extra.module.css';
 
 export const Extra = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const hobbyRefs = useRef({});
+  
 
   const hobbies = [
     {
@@ -49,8 +50,8 @@ export const Extra = () => {
     {
       title: 'Classes',
       icon: <Book size={24} />,
-      description: 'Classes I have attended too',
-      link: 'https://spotify.com/your-profile',
+      description: 'School and Classes i have attented too',
+      link: '/extra/class',
     },
     {
       title: 'Side projects',
@@ -58,6 +59,13 @@ export const Extra = () => {
       description: 'Favorite artists and playlists',
       link: 'https://spotify.com/your-profile',
     },
+    {
+      title: 'Sports',
+      icon: <Volleyball size={24} />,
+      description: 'Favorite sport',
+      link: '/extra/sport',
+    },
+    
     
   ];
 
