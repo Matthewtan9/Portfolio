@@ -193,3 +193,23 @@
   color: #e2e8f0;
   font-weight: 500;
 }
+.semesterSelect {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  color: #e2e8f0;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+ }
+ 
+ .semesterSelect:focus {
+  outline: none;
+  border-color: #475569;
+ }
+ 
+ .semesterSelect option {
+  background-color: #1e293b;
+  color: #e2e8f0;
+ }

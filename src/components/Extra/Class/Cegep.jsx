@@ -6,6 +6,41 @@ export const Cegep = () => {
   const [searchSkill, setSearchSkill] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const [selectedSemester, setSelectedSemester] = useState('all');
+
+  const semesters = ['all', 'semester1', 'semester2', 'semester3', 'semester4', 'semester5', 'semester6'];
+  
+  const courseDescriptions = {
+    "Mathematics For Computer Science": "Covers discrete mathematics, logic, proofs, and mathematical reasoning essential for computer science.",
+    "Computing/IT Fundamentals": "Introduction to computer hardware, software, and basic IT concepts.",
+    "Object Oriented Programming with Java 1": "Basic programming concepts using Java, including classes, objects, and inheritance.",
+    "User Experience/Web Interface": "Principles of UI/UX design and implementation of web interfaces using HTML and CSS.",
+    "Web Programming and JS Libraries": "Advanced web development using JavaScript and modern frameworks.",
+    "Object Oriented Programming with Java 2": "Advanced Java programming concepts and design patterns.",
+    "Operating Systems using Linux": "Linux system administration and operating system concepts.",
+    "Config, Mng and Maint": "Computer systems configuration, management, and maintenance procedures.",
+    "Project Management with QM": "Software project management methodologies and quality management.",
+    "Database Design Intro SQL": "Database design principles and SQL programming.",
+    "Networking and Security": "Computer networking fundamentals and security protocols.",
+    ".Net Development": "Building applications using C# and .NET framework.",
+    "Java Web Programming": "Server-side web development using Java technologies.",
+    "Intro to IOT and EMB System": "Introduction to Internet of Things and embedded systems.",
+    "Web development with PHP": "Server-side web development using PHP.",
+    "System Analysis and Design": "Software system analysis and design methodologies.",
+    "Mobile Application Dev": "Android mobile application development using Kotlin.",
+    "Game Development": "Game development principles using Unity and C#.",
+    "Web Services and Dist Comp": "Distributed computing and web services architecture.",
+    "Database Admin and Security": "Database administration and security practices.",
+    "Mobile Application Development 2: IOS": "iOS mobile application development using Swift.",
+    "Final Project 1": "First phase of capstone project implementation.",
+    "Azure for SQL Developers": "Cloud database management using Azure SQL.",
+    "IoT: Design and Prototyping": "Advanced IoT development and prototyping.",
+    "Professional Integration": "Professional development and industry integration.",
+    "Final Project 2": "Final phase of capstone project implementation.",
+    "Internship (Field Experience)": "Practical industry experience through internship.",
+    "Managing Big Data": "Big data management and analysis techniques.",
+    "Comprehensive Assessment": "Final program assessment and evaluation."
+  };
 
   const courseSkills = {
     "Mathematics For Computer Science": ["Math", "Logic", "Problem Solving"],
@@ -39,43 +74,6 @@ export const Cegep = () => {
     "Comprehensive Assessment": ["Evaluation", "Assessment"]
   };
 
-  const getAllSkills = () => {
-    const skillSet = new Set();
-    Object.values(courseSkills).forEach(skills => {
-      skills.forEach(skill => skillSet.add(skill));
-    });
-    return Array.from(skillSet).sort();
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const handleSearch = (e) => {
-    setSearchSkill(e.target.value);
-  };
-
-  const handleSkillClick = (skill) => {
-    setSearchSkill(skill);
-    setIsDropdownOpen(false);
-  };
-
-  const filterCourses = (courses) => {
-    if (!searchSkill) return courses;
-    return courses.filter(course => {
-      const skills = courseSkills[course.name] || [];
-      return skills.some(skill => 
-        skill.toLowerCase().includes(searchSkill.toLowerCase())
-      );
-    });
-  };
 
   const Cegep = {
     semester1: [
@@ -236,15 +234,72 @@ export const Cegep = () => {
       }
     ]
   };
+  const getAllSkills = () => {
+    const skillSet = new Set();
+    Object.values(courseSkills).forEach(skills => {
+      skills.forEach(skill => skillSet.add(skill));
+    });
+    return Array.from(skillSet).sort();
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSearch = (e) => {
+    setSearchSkill(e.target.value);
+  };
+
+  const handleSkillClick = (skill) => {
+    setSearchSkill(skill);
+    setIsDropdownOpen(false);
+  };
+
+  const filterCourses = (courses) => {
+    if (!searchSkill) return courses;
+    return courses.filter(course => {
+      const skills = courseSkills[course.name] || [];
+      return skills.some(skill => 
+        skill.toLowerCase().includes(searchSkill.toLowerCase())
+      );
+    });
+  };
+  const getFilteredSkills = () => {
+    const allSkills = getAllSkills();
+    if (!searchSkill) return allSkills;
+    return allSkills.filter(skill => 
+      skill.toLowerCase().includes(searchSkill.toLowerCase())
+    );
+  };
 
   return (
     <div className={styles.container}>
-      <a href="/class" className={styles.backLink}>
+      <a href="/extra/class" className={styles.backLink}>
         <ArrowLeft className={styles.backIcon} />
         Back to Education
       </a>
       
-      <h1 className={styles.mainTitle}>Computer Science Technology Cegep</h1>
+      <h1 className={styles.mainTitle}>Computer Science Technology Cegep</h1>    
+      <select 
+  value={selectedSemester} 
+  onChange={(e) => setSelectedSemester(e.target.value)}
+  className={styles.semesterSelect}
+>
+  <option value="all">Search by Semesters</option>
+  <option value="semester1">Semester 1</option>
+  <option value="semester2">Semester 2</option>
+  <option value="semester3">Semester 3</option>
+  <option value="semester4">Semester 4</option>
+  <option value="semester5">Semester 5</option>
+  <option value="semester6">Semester 6</option>
+</select>
       
       <div className={styles.searchContainer} ref={dropdownRef}>
         <div className={styles.searchWrapper}>
@@ -259,9 +314,9 @@ export const Cegep = () => {
           />
         </div>
         
-        {isDropdownOpen && (
+        {(isDropdownOpen || searchSkill) && (
           <div className={styles.dropdown}>
-            {getAllSkills().map((skill, index) => (
+            {getFilteredSkills().map((skill, index) => (
               <button
                 key={index}
                 onClick={() => handleSkillClick(skill)}
@@ -274,9 +329,13 @@ export const Cegep = () => {
         )}
       </div>
       
-      {Object.entries(Cegep).map(([semester, semesterCegep]) => {
-        const filteredCourses = filterCourses(semesterCegep);
-        if (filteredCourses.length === 0) return null;
+  
+
+{Object.entries(Cegep)
+  .filter(([semester]) => selectedSemester === 'all' || semester === selectedSemester)
+  .map(([semester, semesterCegep]) => {
+    const filteredCourses = filterCourses(semesterCegep);
+    if (filteredCourses.length === 0) return null;
         
         return (
           <div key={semester} className={styles.semesterSection}>
@@ -289,6 +348,9 @@ export const Cegep = () => {
                   <div>
                     <h3 className={styles.courseName}>{course.name}</h3>
                     <p className={styles.courseCode}>{course.code}</p>
+                    <p className={styles.courseDescription}>
+                    {courseDescriptions[course.name]}
+                    </p>
                     <div className={styles.skillTags}>
                       {courseSkills[course.name]?.map((skill, i) => (
                         <span key={i} className={styles.skillTag}>
