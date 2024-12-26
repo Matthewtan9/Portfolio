@@ -1,6 +1,6 @@
 import React from 'react';
+import { ArrowLeft, BookOpen } from 'lucide-react';
 import styles from './Class.module.css';
-import { ArrowLeft } from 'lucide-react';
 
 export const Class = () => {
   const education = [
@@ -9,23 +9,30 @@ export const Class = () => {
       institution: 'Antoine-Brossard',
       period: '2015 - 2019',
       highlights: 'Graduated ',
-      cover: '/assets/extra/class/highschool.jpg',
+      cover: '/assets/extra/class/ab.jpg',
     },
     {
       level: 'CEGEP',
       institution: 'Champlain College',
       period: '2020 - 2023',
       highlights: 'Completed the computer science program.',
-      cover: '/assets/extra/class/cegep.jpg',
+      cover: '/assets/extra/class/champlain.png',
+      link: '/extra/class/cegep',
     },
     {
       level: 'University',
       institution: 'Concordia University',
       period: '2024 - Present',
       highlights: 'Currently pursuing a Bachelor of Science in Computer Science.',
-      cover: '/assets/extra/class/university.jpg',
+      cover: '/assets/extra/class/concordia.jpg',
+      // link: '/class/university',
     }
   ];
+
+  const showCourseLink = (level) => {
+    return level === 'CEGEP'
+    //  || level === 'University';
+  };
 
   return (
     <div className={styles.container}>
@@ -59,6 +66,12 @@ export const Class = () => {
                 <h3 className={styles.institution}>at {edu.institution}</h3>
                 <p className={styles.period}>{edu.period}</p>
                 <p className={styles.highlights}>{edu.highlights}</p>
+                {showCourseLink(edu.level) && (
+                  <a href={edu.link} className={styles.courseLink}>
+                    <BookOpen className={styles.courseIcon} />
+                    View Courses
+                  </a>
+                )}
               </div>
             </div>
           ))}

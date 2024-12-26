@@ -9,21 +9,15 @@ export const Movie = () => {
       director: 'Christopher Nolan',
       year: '2010',
       highlights: 'A mind-bending thriller exploring the world of dreams and heists.',
-      cover: '/assets/extra/movies/inception.jpg',
+      cover: '/assets/extra/movie/inception.png',
     },
-    {
-      title: 'The Matrix',
-      director: 'Lana and Lilly Wachowski',
-      year: '1999',
-      highlights: 'A sci-fi classic that questions the nature of reality.',
-      cover: '/assets/extra/movies/matrix.jpg',
-    },
+  
     {
       title: 'Interstellar',
       director: 'Christopher Nolan',
       year: '2014',
       highlights: 'An epic journey through space and time to save humanity.',
-      cover: '/assets/extra/movies/interstellar.jpg',
+      cover: '/assets/extra/movie/interstellar.jpg',
     }
   ];
 

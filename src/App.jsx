@@ -13,6 +13,8 @@ import { Gaming } from "./components/Extra/Gaming/Gaming";
 import { Channel } from "./components/Extra/Channel/Channel";
 import { Class } from "./components/Extra/Class/Class";
 import { Movie } from "./components/Extra/Movie/Movie";
+import { Sport } from "./components/Extra/Sport/Sport";
+import { Cegep } from "./components/Extra/Class/Cegep";
 
 
 // Create a wrapper component to handle the navbar logic
@@ -37,12 +39,18 @@ const AppContent = () => {
             </>
           }
         />
+        {/* Path */}
         <Route path="/extra" element={<Extra />} />
         <Route path="/extra/books" element={<Book />} />
         <Route path="/extra/gaming" element={<Gaming />} />
         <Route path="/extra/channel" element={< Channel />} />
         <Route path="/extra/class" element={< Class />} />
         <Route path="/extra/Movie" element={< Movie />} />
+        <Route path="/extra/Sport" element={<Sport/>} />
+
+        {/* Path class */}
+        <Route path="/extra/class/cegep" element={< Cegep />} />
+        
       </Routes>
     </div>
   );

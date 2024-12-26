@@ -16,7 +16,7 @@ export const Channel = () => {
       handle: '@mytiktok',
       description: 'Short and engaging content around daily life, hobbies, and trends.',
       link: 'https://www.tiktok.com/@gaminggolem',
-      icon: '/assets/extra/channel/tiktok.svg',
+      icon: '/assets/extra/channel/tiktok.png',
     },
     {
       name: 'Instagram',
