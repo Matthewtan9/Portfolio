@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Sport.module.css';
 import { ArrowLeft } from 'lucide-react';
-import basket from '/assets/extra/sport/basketball.png';
+import basket from '/assets/extra/sport/Basketball.png';
 import soccer from '/assets/extra/sport/soccer.png';
 
 export const Sport = () => {
