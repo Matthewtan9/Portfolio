@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Movie.module.css';
 import { ArrowLeft } from 'lucide-react';
+import inception from '/assets/extra/movie/inception.png';
+import interstellar from '/assets/extra/movie/interstellar.jpg';
 
 export const Movie = () => {
   const movies = [
@@ -9,7 +11,7 @@ export const Movie = () => {
       director: 'Christopher Nolan',
       year: '2010',
       highlights: 'A mind-bending thriller exploring the world of dreams and heists.',
-      cover: '/assets/extra/movie/inception.png',
+      cover: inception,
     },
   
     {
@@ -17,7 +19,7 @@ export const Movie = () => {
       director: 'Christopher Nolan',
       year: '2014',
       highlights: 'An epic journey through space and time to save humanity.',
-      cover: '/assets/extra/movie/interstellar.jpg',
+      cover: interstellar,
     }
   ];
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './Channel.module.css';
 import { ArrowLeft } from 'lucide-react';
+import youtube from '/assets/extra/channel/youtube.png'
+import tiktok from '/assets/extra/channel/tiktok.png'
+
 
 export const Channel = () => {
   const channel = [
@@ -9,14 +12,14 @@ export const Channel = () => {
       handle: '@mychannel',
       description: 'My main platform for sharing educational videos and creative projects.',
       link: 'https://www.youtube.com/@4matt44',
-      icon: '/assets/extra/channel/youtube.png',
+      icon: youtube,
     },
     {
       name: 'TikTok',
       handle: '@mytiktok',
       description: 'Short and engaging content around daily life, hobbies, and trends.',
       link: 'https://www.tiktok.com/@gaminggolem',
-      icon: '/assets/extra/channel/tiktok.png',
+      icon: tiktok,
     },
     {
       name: 'Instagram',

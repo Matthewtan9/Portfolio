@@ -1,7 +1,9 @@
 import React from 'react';
 import { ArrowLeft, BookOpen } from 'lucide-react';
 import styles from './Class.module.css';
-
+import high from '/assets/extra/class/ab.jpg';
+import cegep from '/assets/extra/class/champlain.png';
+import university from '/assets/extra/class/concordia.jpg';
 export const Class = () => {
   const education = [
     {
@@ -9,14 +11,14 @@ export const Class = () => {
       institution: 'Antoine-Brossard',
       period: '2015 - 2019',
       highlights: 'Graduated ',
-      cover: '/assets/extra/class/ab.jpg',
+      cover: high,
     },
     {
       level: 'CEGEP',
       institution: 'Champlain College',
       period: '2020 - 2023',
       highlights: 'Completed the computer science program.',
-      cover: '/assets/extra/class/champlain.png',
+      cover: cegep,
       link: '/extra/class/cegep',
     },
     {
@@ -24,7 +26,7 @@ export const Class = () => {
       institution: 'Concordia University',
       period: '2024 - Present',
       highlights: 'Currently pursuing a Bachelor of Science in Computer Science.',
-      cover: '/assets/extra/class/concordia.jpg',
+      cover: university,
       // link: '/class/university',
     }
   ];

@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Sport.module.css';
 import { ArrowLeft } from 'lucide-react';
+import basket from '/assets/extra/sport/basketball.png';
+import soccer from '/assets/extra/sport/soccer.png';
 
 export const Sport = () => {
   const sports = [
@@ -9,14 +11,14 @@ export const Sport = () => {
       league: 'NBA',
       team: 'Golden State Warriors',
       highlights: 'Fast-paced sport combining athleticism with strategic team play.',
-      cover: '/assets/extra/sport/basketball.png'
+      cover: basket
     },
     {
       title: 'Soccer',
       league: 'Premier League',
       team: 'Manchester United',
       highlights: 'The beautiful game known for its global appeal and technical skill.',
-      cover: '/assets/extra/sport/soccer.png'
+      cover: soccer
     },
  
   ];
