@@ -28,7 +28,7 @@
   letter-spacing: 0.02em;
   line-height: 1.1;
   margin-block-end: 0.3em;
-  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  background: linear-gradient(90deg, var(--color-text), var(--color-primary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -82,8 +82,8 @@
 .formGroup input:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px rgba(123, 142, 212, 0.25);
   background-color: rgba(255, 255, 255, 0.08);
 }
 
@@ -98,7 +98,7 @@
   padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
   font-weight: 600;
-  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
   color: white;
   border: none;
   border-radius: 6px;
@@ -110,7 +110,7 @@
 .submitBtn:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
 }
 
 .status {
@@ -119,8 +119,8 @@
   padding: 0.5rem;
   border-radius: 6px;
   text-align: center;
-  background-color: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
+  background-color: rgba(123, 142, 212, 0.15);
+  color: var(--color-primary-light);
 }
 
 .links {
@@ -161,7 +161,7 @@
 }
 
 .link a:hover {
-  color: #60a5fa;
+  color: var(--color-primary-light);
   opacity: 1;
 }
 

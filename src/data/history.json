@@ -1,11 +1,21 @@
 [
   {
+    "role": "Digital Infrastructure & AI Intern",
+    "organisation": "Connect 4 Marketing Ltd.",
+    "startDate": "Jun, 2026",
+    "endDate": "Present",
+    "experiences": ["Provided IT support and assisted with the development and maintenance of digital platforms using WordPress, Webflow, and Beehiiv. Built and updated web pages, managed content, and optimized site structure."],
+    "imageSrc": "history/connect4marketing.png",
+    "skills": ["WordPress", "Webflow", "Beehiiv"]
+  },
+  {
     "role": "Software Developper",
     "organisation": "Systeme Sante ACL Inc.",
     "startDate": "Feb, 2024",
     "endDate": "Present",
     "experiences": ["Worked on making a a corporate website for the company ACL systeme, based on RAMQ billing."],
-    "imageSrc": "history/ACL.png"
+    "imageSrc": "history/ACL.png",
+    "skills": ["React", "HTML", "CSS"]
   },
   {
     "role": "Deli Cook",
@@ -13,7 +23,8 @@
     "startDate": "May, 2023",
     "endDate": "Aug, 2024",
     "experiences": ["We've worked in an environment where we collaborated as a team to tackle the tasks given to us. Every day, we needed to complete the required tasks. Once done, we'd ensure the area was clean and prepared for the tasks the following day."],
-    "imageSrc": "history/costco.png"
+    "imageSrc": "history/costco.png",
+    "skills": ["Teamwork", "Time Management"]
   }
   ,
   {
@@ -24,6 +35,7 @@
     "experiences": [
       "During the summer of 2022, I worked in a fast-paced restaurant where I had to replace trays emptied by customers with fresh ones prepared by the cooks."
     ],
-    "imageSrc": "history/saveur.png"
+    "imageSrc": "history/saveur.png",
+    "skills": ["Teamwork", "Customer Service"]
   }
 ]

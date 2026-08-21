@@ -26,5 +26,17 @@
   {
     "title": "Figma",
     "imageSrc": "skills/figma.png"
+  },
+  {
+    "title": "WordPress",
+    "imageSrc": "skills/wordpress.svg"
+  },
+  {
+    "title": "Webflow",
+    "imageSrc": "skills/webflow.svg"
+  },
+  {
+    "title": "Beehiiv",
+    "imageSrc": "skills/beehiiv.png"
   }
 ]

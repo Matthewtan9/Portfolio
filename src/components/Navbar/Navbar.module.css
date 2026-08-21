@@ -15,6 +15,11 @@
   font-weight: 600;
   text-decoration: none;
   color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.title:hover {
+  color: var(--color-primary-light);
 }
 
 
@@ -36,6 +41,27 @@
   font-size: 25px;
   color: var(--color-text);
   text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.menuItems a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary-light);
+  transition: width 0.2s ease;
+}
+
+.menuItems a:hover {
+  color: var(--color-primary-light);
+}
+
+.menuItems a:hover::after {
+  width: 100%;
 }
 
 @media screen and (max-width: 830px) {

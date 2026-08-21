@@ -7,12 +7,12 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.content}>
         <p className={styles.text}>
-          © 2024 Matthew. All Rights Reserved.
+          © {new Date().getFullYear()} Matthew Tan. All Rights Reserved.
         </p>
         <ul className={styles.socialLinks}>
           <li>
             <a
-              href="https://www.linkedin.com/in/matthew-profile"
+              href="https://www.linkedin.com/in/matthew-tan-b53b63289/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.link}
@@ -22,7 +22,7 @@ export const Footer = () => {
           </li>
           <li>
             <a
-              href="https://github.com/matthew-profile"
+              href="https://github.com/Matthewtan9"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.link}
