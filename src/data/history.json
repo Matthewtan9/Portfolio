@@ -1,14 +1,5 @@
 [
   {
-    "role": "Digital Infrastructure & AI Intern",
-    "organisation": "Connect 4 Marketing Ltd.",
-    "startDate": "Jun, 2026",
-    "endDate": "Present",
-    "experiences": ["Provided IT support and assisted with the development and maintenance of digital platforms using WordPress, Webflow, and Beehiiv. Built and updated web pages, managed content, and optimized site structure."],
-    "imageSrc": "history/connect4marketing.png",
-    "skills": ["WordPress", "Webflow", "Beehiiv"]
-  },
-  {
     "role": "Software Developper",
     "organisation": "Systeme Sante ACL Inc.",
     "startDate": "Feb, 2024",
@@ -16,6 +7,15 @@
     "experiences": ["Worked on making a a corporate website for the company ACL systeme, based on RAMQ billing."],
     "imageSrc": "history/ACL.png",
     "skills": ["React", "HTML", "CSS"]
+  },
+  {
+    "role": "Digital Infrastructure & AI Intern",
+    "organisation": "Connect 4 Marketing Ltd.",
+    "startDate": "Jun, 2026",
+    "endDate": "Present",
+    "experiences": ["Provided IT support and assisted with the development and maintenance of digital platforms using WordPress, Webflow, and Beehiiv. Built and updated web pages, managed content, and optimized site structure."],
+    "imageSrc": "history/connect4marketing.png",
+    "skills": ["WordPress", "Webflow", "Beehiiv"]
   },
   {
     "role": "Deli Cook",

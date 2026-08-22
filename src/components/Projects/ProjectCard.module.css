@@ -57,7 +57,8 @@
 
 .links {
   width: 100%;
-  margin-top: 26px;
+  margin-top: auto;
+  padding-top: 26px;
   display: flex;
   justify-content: space-around;
 }

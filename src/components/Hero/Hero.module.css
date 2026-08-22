@@ -123,6 +123,12 @@
   line-height: 1.5;
 }
 
+.resumeBtnGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 .resumeBtn {
   display: inline-flex;
   align-items: center;
@@ -143,6 +149,7 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
+
 
 .resumeIcon {
   width: 1.25rem;

@@ -111,7 +111,7 @@
   margin-left: 17px;
 }
 
-.historySkills {
+.historyItemDetails .historySkills {
   margin-top: 14px;
   margin-left: 0;
   display: flex;
@@ -119,6 +119,7 @@
   flex-wrap: wrap;
   gap: 8px;
   list-style: none;
+  list-style-type: none;
 }
 
 .historySkill {
@@ -126,7 +127,8 @@
   font-weight: 600;
   letter-spacing: 0.3px;
   color: var(--color-text);
-  background: var(--color-primary);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 100px;
   padding: 4px 14px;
 }
